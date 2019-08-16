@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+    {{ post.title }}
+{% endblock heading %}
+
+{% block blurb %}
+    this is A BLURB
+{% endblock %}
+
+{% block content %}
+
+    {{ post.body|safe }}
+    
+{% endblock %}

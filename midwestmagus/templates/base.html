@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <title>{% block title %}Midwest Magus{% endblock %}</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% block nav %}
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" style="margin:auto">
+            <a class="navbar-brand" href="{% url 'index' %}">MidwestMagus</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link nav-link-spacing" href="{% url 'index' %}">Home</a>
+                    <a class="nav-item nav-link nav-link-spacing" href="#">Blog</a>
+                    <a class="nav-item nav-link nav-link-spacing" href="#">How I Read</a>
+                    <a class="nav-item nav-link nav-link-spacing" href="#">Request a Reading</a>
+                    <a class="nav-item nav-link nav-link-spacing" href="#">Public Readings</a>
+                    <a class="nav-item nav-link nav-link-spacing" href="#">About</a>
+                    <a class="nav-item nav-link nav-link-spacing" href="#">Contact</a>
+                </div>
+            </div>
+        </nav>
+        {% endblock %}
+        
+        <div class="jumbotron jumbotron-top">
+            <div class="container">
+                <h1 class="display-4">{% block heading %}MidwestMagus.com{% endblock %}</h1>
+                <p class="lead">{% block blurb %}Your source for divination and insight from the Heart of Wichita!{% endblock %}</p>
+            </div>
+        </div>
+
+        <!-- The content section; blocked into templates -->
+        <div class="container">
+                {% block content %}
+                    
+                {% endblock content %}
+        </div>
+    
+
+    <!-- Bootstrap Javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- END Bootstrap Javascript-->
+    
+    {% block pageScripts %}
+        
+    {% endblock pageScripts %}
+        
+    </body>
+</html>

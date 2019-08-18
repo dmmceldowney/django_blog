@@ -28,5 +28,9 @@ class PostView(View):
         return render(request, self.template_name, {'post': post})
 
 # view for about
+def about(request):
+    return render(request, 'blog/about.html')
 
 # view(s) for tarot services
+def process(request):
+    return render(request, 'blog/process.html')

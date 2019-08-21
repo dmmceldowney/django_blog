@@ -1,0 +1,22 @@
+.hero {
+    padding-top: 3em;
+}
+
+.columns.blog-listing {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-left: 3em;
+    background: lightgrey;
+    border-top: darkgrey 1em;
+    border-bottom: darkgrey 1em;
+}
+
+.navbar-item.no-hover {
+    color: black;
+    background: white;
+}
+
+.navbar-item.no-hover:hover {
+    color: black;
+    background: white;
+}

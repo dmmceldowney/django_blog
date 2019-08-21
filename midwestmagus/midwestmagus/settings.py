@@ -123,6 +123,8 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = STATIC_URL
+STATIC_ROOT = ''.join([BASE_DIR, '/static/'])
 
-STATICFILES_DIRS = (BASE_DIR +"/static/css/",)
+STATICFILES_DIRS = (
+)
+

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="{% static 'blog/css/bulma.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}" type="text/css">
+        <title>{% block title %}Midwest Magus{% endblock %}</title>
+    </head>
+    <body>
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item is-bold no-hover" href="#"><strong>MidwestMagus</strong>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <a href="{% url 'index' %}" class="navbar-item">Home</a>
+                <a href="{% url 'theory' %}" class="navbar-item">How Tarot Works</a>
+                <a href="{% url 'blog' %}" class="navbar-item">Blog</a>
+                <a href="#" class="navbar-item">Request A Reading</a>
+            </div>
+            <div class="navbar-end">
+                 <a href="{% url 'about' %}" class="navbar-item">About</a>
+            </div>
+        </nav>
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">{% block heading %}MidwestMagus.com{% endblock %}</h1>
+                    <p class="subtitle">{% block blurb %}Your source for divination and insight from the Heart of Wichita!{% endblock %}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The content section; blocked into templates -->
+        <div class="container">
+                {% block content %}
+                {% endblock content %}
+        </div>
+    {{ request.path }}
+    <!-- Bootstrap Javascript -->
+    <!-- END Bootstrap Javascript-->
+    {% block pageScripts %}
+        
+    {% endblock pageScripts %}
+        
+    </body>
+</html>

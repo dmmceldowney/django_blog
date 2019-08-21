@@ -14,9 +14,9 @@ class BlogView(View):
 
     def get(self, request, tag_id=None):
         if tag_id == None:
-            posts = Post.objects.filter(tags__).order_by('-publish_date')[:10]
+            posts = Post.objects.order_by('-publish_date')[:10]
         else:
-            posts = Post.objects.filter(tag_pk__in=tag_id)[:10]
+            posts = Post.objects.filter(tag_pk__in=tag_id).order_by('-publish_date')[:10]
         return render(request, self.template_name, {'posts': posts})
 
 # view for blog post
@@ -32,5 +32,5 @@ def about(request):
     return render(request, 'blog/about.html')
 
 # view(s) for tarot services
-def process(request):
-    return render(request, 'blog/process.html')
+def theory(request):
+    return render(request, 'blog/tarot-theory.html')
